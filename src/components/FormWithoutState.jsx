@@ -3,12 +3,13 @@ import { useEffect, useRef, useState } from "react";
 
 const FormWithoutState = () => {
   const countRef = useRef(0);
-  const [data, setData]= useState('')
-
+  const [data, setData] = useState("");
 
   useEffect(() => {
     countRef.current = countRef.current + 1;
   });
+
+  // Will count number of state changes. This demo should demonstrate that with React FormData, re-renders and state change is not needed.
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,10 +28,10 @@ const FormWithoutState = () => {
   };
 
   const handleChange = (e) => {
-    e.preventDefault()
-    setData(e.target.value)
+    e.preventDefault();
+    setData(e.target.value);
     console.log(data);
-  }
+  };
 
   return (
     <div>
