@@ -1,8 +1,3 @@
-# React + Vite
+# React FormData instead of useState
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+In this component, re-renders are minimized by using the FormData object to capture form data instead of storing the data in component state. This is useful in scenarios where you want to minimize unnecessary re-renders and improve performance. However, it does make it harder to implement features that require real-time updates of the form data, such as form validation.
