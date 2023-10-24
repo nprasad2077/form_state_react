@@ -41,6 +41,7 @@ const FormWithoutState = () => {
 
   // handleChange is the function that will be called when the additional input field is changed.
   // It updates the data state and logs its value.
+  // This reflects the classic, unwanted behavior of updating state.
   const handleChange = (e) => {
     e.preventDefault();
     setData(e.target.value);
