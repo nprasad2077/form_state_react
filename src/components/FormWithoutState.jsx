@@ -1,8 +1,10 @@
 import React from "react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const FormWithoutState = () => {
   const countRef = useRef(0);
+  const [data, setData]= useState('')
+
 
   useEffect(() => {
     countRef.current = countRef.current + 1;
@@ -24,6 +26,12 @@ const FormWithoutState = () => {
     console.log(body);
   };
 
+  const handleChange = (e) => {
+    e.preventDefault()
+    setData(e.target.value)
+    console.log(data);
+  }
+
   return (
     <div>
       <h2>Form without State</h2>
@@ -37,6 +45,10 @@ const FormWithoutState = () => {
         </div>
         <button type="submit">Submit</button>
       </form>
+      <div>
+        <label>Old Change</label>
+        <input onChange={handleChange}></input>
+      </div>
     </div>
   );
 };
